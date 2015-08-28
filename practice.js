@@ -228,13 +228,9 @@ methodCollection.logHello = function() {
 
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 function MakePerson(name, birthday, ssn) {
-  var Person = {};
-  
-  Person.name = name;
-  Person.birthday = birthday;
-  Person.ssn = ssn;
-  
-  return Person;
+  this.name = name;
+  this.birthday = birthday;
+  this.ssn = ssn;
 }
 
 // console.log(MakePerson("Sam Skeen", "Sep 8, 92", "123-45-6789"));
@@ -247,14 +243,10 @@ function MakePerson(name, birthday, ssn) {
 
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 function MakeCard(num, svv, signed, expirationDate) {
-  var Card = {};
-  
-  Card.num = num;
-  Card.svv = svv;
-  Card.signed = signed;
-  Card.expirationDate = expirationDate;
-  
-  return Card;
+  this.num = num;
+  this.svv = svv;
+  this.signed = signed;
+  this.expirationDate = expirationDate;
 }
   
   
@@ -276,6 +268,5 @@ var bindCard = function(person, creditCard) {
 
 // var somebody = MakePerson("Sam Skeen", "Sep 9, 1992", "123-45-6789");
 // var someCard = MakeCard(1234567812345678, 123, true, "1/2015");
-var someRandomThing = bindCard(MakePerson("Sam Skeen", "Sep 9, 1992", "123-45-6789"), MakeCard(1234567812345678, 123, true, "1/2015"));
 
-// console.log(someRandomThing);
+// console.log(bindCard(new MakePerson("Sam Skeen", "Sep 9, 1992", "123-45-6789"), new MakeCard(1234567812345678, 123, true, "1/2015")));
